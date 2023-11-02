@@ -71,7 +71,7 @@ const Countdown = () => {
                 seconds={seconds}/>
         
             <Button 
-                text={isRunning && time != 0 ? "Pause" : "Start"}
+                text={isRunning && time !== 0 ? "Pause" : "Start"}
                 onClick={startStop}/>
             <Button 
                 text="Reset"

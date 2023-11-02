@@ -17,7 +17,7 @@ const Tabata = () => {
     useEffect(() => {
         let intervalId;
 
-        if (isRunning && time !=0 && rounds > 0) {
+        if (isRunning && time !==0 && rounds > 0) {
             // setting time from 0 to 1 every 10 millisecond using javascript setInterval method
             intervalId = setInterval(() => setTime(time - 1), 10);
             }
@@ -29,13 +29,13 @@ const Tabata = () => {
         else if (isRunning && workStatus === null && time === 0 && rounds > 0) {
             setTime(workCount+99 )
             setWorkStatus(true)
-            setRounds(rounds-1)
+            setRounds(rounds-1) 
             intervalId = setInterval(() => setTime(time - 1), 10);
         }
 
         return () => clearInterval(intervalId);
 
-      }, [isRunning, workStatus, time, rounds]);
+      }, [isRunning, workStatus, time, rounds, restCount, workCount]);
  
     // Seconds calculation
     const seconds = Math.floor((time % 6000) / 100);
@@ -97,7 +97,7 @@ const Tabata = () => {
             minutes="0"
             seconds={seconds}/>
         <Button 
-            text={isRunning && time != 0 ? "Pause" : "Start"}
+            text={isRunning && time !== 0 ? "Pause" : "Start"}
             onClick={startStop}/>
         <Button 
             text="Reset"

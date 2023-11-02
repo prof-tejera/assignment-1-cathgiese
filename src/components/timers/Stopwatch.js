@@ -12,7 +12,7 @@ const Stopwatch = () => {
     const [sec, setSeconds] = useState(null);
 
     // Credit for setInterval & math.floor:
-    https://medium.com/how-to-react/simple-way-to-create-a-stopwatch-in-react-js-bcc0e08e041e
+    // https://medium.com/how-to-react/simple-way-to-create-a-stopwatch-in-react-js-bcc0e08e041e
     useEffect(() => {
         let intervalId;
         if (isRunning && time !== min + sec) {
