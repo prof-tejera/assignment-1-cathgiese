@@ -1,4 +1,4 @@
-const Screen = ({ active, minutes, seconds, milliseconds }) => {
+const Screen = ({ minutes, seconds }) => {
     return (
       <div
         style={{
