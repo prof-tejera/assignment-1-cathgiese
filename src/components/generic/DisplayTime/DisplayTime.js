@@ -1,24 +1,22 @@
-const DisplayTime = ({ active, minutes, seconds, milliseconds }) => {
+const Screen = ({ active, minutes, seconds, milliseconds }) => {
     return (
       <div
         style={{
-          border: "1px solid black",
+          // border: "1px solid black",
           width: 300,
           height: 70,
-          textAlign: "right",
+          textAlign: "center",
           marginBottom: 10,
           background: "white",
-          fontSize: "20px",
-          paddingTop: "40px",
-          paddingRight: "15px",
+          fontSize: "50px",
+          padding: "30px"
         }}
       >
-        {minutes}m 
-        {seconds}s 
-        {milliseconds}
+        {minutes}m
+        {seconds}s
       </div>
     );
   };
   
-  export default DisplayTime;
+  export default Screen;
   
