@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "../generic/Button/Button";
 import DisplayTime from "../generic/DisplayTime/DisplayTime";
 import Panel from "../generic/Panel";
-import Selector from "../generic/Selector";
+import Selector from "../generic/Selector/Selector";
 
 const Countdown = () => {
     // Store the time and button
@@ -56,32 +56,31 @@ const Countdown = () => {
         <option value={number} key={number}>{number}</option>)
 
     return (
-    <div>
-        <Selector 
-            label="min"
-            onChange={e => setMinutes(e.target.value*6000)}
-            numbers={timeNumbers}/>
-        <Selector 
-            label="sec"
-            onChange={e => setSeconds(e.target.value*100)}
-            numbers={timeNumbers}/>
-        <DisplayTime
-            minutes={minutes}
-            seconds={seconds}/>
         <div className="grid-container">
-            <Panel background-color="blue">
-                <Button 
-                    text={isRunning && time != 0 ? "Pause" : "Start"}
-                    onClick={startStop}/>
-                <Button 
-                    text="Reset"
-                    onClick={reset}/>
-                <Button 
-                    text=">>"
-                    onClick={fastForward}/>
+        <Panel background-color="blue">
+            <Selector 
+                label="min"
+                onChange={e => setMinutes(e.target.value*6000)}
+                numbers={timeNumbers}/>
+            <Selector 
+                label="sec"
+                onChange={e => setSeconds(e.target.value*100)}
+                numbers={timeNumbers}/>
+            <DisplayTime
+                minutes={minutes}
+                seconds={seconds}/>
+        
+            <Button 
+                text={isRunning && time != 0 ? "Pause" : "Start"}
+                onClick={startStop}/>
+            <Button 
+                text="Reset"
+                onClick={reset}/>
+            <Button 
+                text=">>"
+                onClick={fastForward}/>
             </Panel>
         </div>
-    </div>
     )
 };
 

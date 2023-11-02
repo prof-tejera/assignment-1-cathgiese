@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "../generic/Button/Button";
 import DisplayTime from "../generic/DisplayTime/DisplayTime";
 import Panel from "../generic/Panel";
-import Selector from "../generic/Selector";
+import Selector from "../generic/Selector/Selector";
 
 const Tabata = () => {
     // Store the time and button
@@ -27,7 +27,7 @@ const Tabata = () => {
             intervalId = setInterval(() => setTime(time - 1), 10);
         }
         else if (isRunning && workStatus === null && time === 0 && rounds > 0) {
-            setTime(workCount+99)
+            setTime(workCount+99 )
             setWorkStatus(true)
             setRounds(rounds-1)
             intervalId = setInterval(() => setTime(time - 1), 10);
@@ -79,17 +79,16 @@ const Tabata = () => {
         <option value={number} key={number}>{number}</option>)
 
     return (
-    <div>
-        Work
+    <div className="grid-container">
+        <Panel background-color="blue">
         <Selector 
             label="sec"
             onChange={e => setWorkCount(e.target.value*100)}
-            numbers={timeNumbers}/><br></br>
-        Rest
+            numbers={timeNumbers}/>
         <Selector 
             label="sec"
             onChange={e => setRestCount(e.target.value*100)}
-            numbers={timeNumbers}/><br></br>
+            numbers={timeNumbers}/>
         <Selector 
             label="rounds"
             onChange={handleRounds}
@@ -97,20 +96,17 @@ const Tabata = () => {
         <DisplayTime
             minutes="0"
             seconds={seconds}/>
-        <div className="grid-container">
-            <Panel background-color="blue">
-                <Button 
-                    text={isRunning && time != 0 ? "Pause" : "Start"}
-                    onClick={startStop}/>
-                <Button 
-                    text="Reset"
-                    onClick={reset}/>
-                <Button 
-                    text=">>"
-                    onClick={fastForward}/>
+        <Button 
+            text={isRunning && time != 0 ? "Pause" : "Start"}
+            onClick={startStop}/>
+        <Button 
+            text="Reset"
+            onClick={reset}/>
+        <Button 
+            text=">>"
+            onClick={fastForward}/>
             </Panel>
         </div>
-    </div>
     )
 };
 
