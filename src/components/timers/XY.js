@@ -92,7 +92,7 @@ const XY = () => {
                 minutes={minutes}
                 seconds={seconds}/>
             <Button 
-                text={isRunning && time != 0 ? "Pause" : "Start"}
+                text={isRunning && time !== 0 ? "Pause" : "Start"}
                 onClick={startStop}/>
             <Button 
                 text="Reset"
