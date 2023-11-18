@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from "react";
 import Button from "../generic/Button/Button";
 import DisplayTime from "../generic/DisplayTime/DisplayTime";
