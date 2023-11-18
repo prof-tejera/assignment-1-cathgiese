@@ -26,7 +26,7 @@ const TimersView = () => {
     { title: "Stopwatch", C: <Stopwatch /> },
     { title: "Countdown", C: <Countdown /> },
     { title: "XY", C: <XY /> },
-    { title: "Tabata", C: <Tabata /> },
+    { title: "Tabata", C: <Tabata /> }
   ];
 
   return (
